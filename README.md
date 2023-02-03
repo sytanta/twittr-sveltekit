@@ -18,7 +18,7 @@ npm i
 
 ## Database
 
-Register and create a database url and shadow database url from [`Supabase`](`https://supabase.com/docs/guides/integrations/prisma`)
+Register and create a database url and shadow database url from [`Supabase`](https://supabase.com/docs/guides/integrations/prisma)
 
 ✏️ Update or create a `.env` file with the following content:
 
