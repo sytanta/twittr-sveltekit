@@ -7,8 +7,8 @@
 
 	let loading = false;
 	let errorSignin: AuthError | null = null;
-	let email = '';
-	let password = '';
+	let email = 'john@yahoo.com';
+	let password = 'password';
 
 	const handleLogin = async () => {
 		loading = true;
