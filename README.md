@@ -7,7 +7,7 @@ This is a folk using SvelteKit v1.0.0 from the original SvelteKit v1.0.0-next.39
 🧑‍🤝‍🧑 Clone the project
 
 ```sh
-git clone https://github.com/joysofcode/sveltekit-for-beginners.git
+git clone https://github.com/sytanta/twittr-sveltekit
 ```
 
 📦️ Install dependencies
