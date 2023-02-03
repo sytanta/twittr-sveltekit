@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model Tweet {
+  id      Int      @id @default(autoincrement())
+  url     String?
+  posted  DateTime
+  content String
+  likes   Int      @default(0)
+  user    User     @relation(fields: [userId], references: [id])
+  userId  String   @db.Uuid
+}
+
+model User {
+  id     String  @id @unique @db.Uuid
+  email  String  @unique
+  handle String  @unique
+  name   String
+  avatar String?
+  about  String?
+  tweets Tweet[]
+  liked  Like[]
+}
+
+model Like {
+  id      Int    @id @default(autoincrement())
+  tweetId Int
+  user    User   @relation(fields: [userId], references: [id])
+  userId  String @db.Uuid
+
+  @@unique([tweetId, userId])
+}
